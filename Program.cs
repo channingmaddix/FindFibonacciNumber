@@ -9,7 +9,7 @@ namespace FindFibonacciNumber
             FindFibonacciNumber(317811);
         }
 
-        static void FindFibonacciNumber(int n)             //This method creates an array and counts the the numbers of the array 
+        static void FindFibonacciNumber(long n)             //This method creates an array and counts the the numbers of the array 
         {                                                  //up until 'n'.
             if(n == 1)                                     //Kind of cheating, these first three if statements check if 
             {                                              //'n' is in one of the first 3 places of the sequence and writes
@@ -23,7 +23,7 @@ namespace FindFibonacciNumber
             {
                 Console.WriteLine("place #4");
             }
-            int[] fib = new int[n];                         //Because we don't know how long the array needs to be for any
+            long[] fib = new int[n];                         //Because we don't know how long the array needs to be for any
             fib[0] = 1;                                     //given number 'n' until we write it out, the array is intialized
             fib[1] = 1;                                     //with a length of 'n', to be safe.
             int i = 1;
@@ -41,7 +41,7 @@ namespace FindFibonacciNumber
                 "fibonacci sequence.");
         }
         
-        static void FindFibonacciNumber2(int n)         //UPDATE: I created this other method to calculate the place of 'n'
+        static void FindFibonacciNumber2(long n)         //UPDATE: I created this other method to calculate the place of 'n'
         {                                               //because the array in the first method used too much memory. 
             if (n == 1)
             {
@@ -50,8 +50,8 @@ namespace FindFibonacciNumber
             else
             {
                 int count = 2;
-                int i = 1;
-                int j = 1;
+                long i = 1;
+                long j = 1;
 
                 while (i < n && j < n)                      //Uses two variables and increments their values by each other, 
                 {                                           //counting each time.
