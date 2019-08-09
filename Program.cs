@@ -9,8 +9,8 @@ namespace FindFibonacciNumber
             FindFibonacciNumber(317811);
         }
 
-        static void FindFibonacciNumber(int n)
-        {
+        static void FindFibonacciNumber(int n)             //This method creates an array and counts the the numbers of the array 
+        {                                                  //up until 'n'.
             if(n == 1)                                     //Kind of cheating, these first three if statements check if 
             {                                              //'n' is in one of the first 3 places of the sequence and writes
                 Console.WriteLine("places 1 and 2");       //the place of the number.
@@ -39,6 +39,37 @@ namespace FindFibonacciNumber
             else
                 Console.WriteLine("This number is not in the " +
                 "fibonacci sequence.");
+        }
+        
+        static void FindFibonacciNumber2(int n)         //UPDATE: I created this other method to calculate the place of 'n'
+        {                                               //because the array in the first method used too much memory. 
+            if (n == 1)
+            {
+                Console.WriteLine("places 1 and 2");
+            }
+            else
+            {
+                int count = 2;
+                int i = 1;
+                int j = 1;
+
+                while (i < n && j < n)                      //Uses two variables and increments their values by each other, 
+                {                                           //counting each time.
+                    i += j;
+                    j += i;
+                    count = count + 2;
+                }
+                if (j == n)
+                {
+                    Console.WriteLine("place #" + (count));
+                }
+                else if (i == n)
+                {
+                    Console.WriteLine("place #" + (count - 1));
+                }
+                else
+                    Console.WriteLine("# not in Fibonacci sequence.");
+            }
         }
     }
 }
